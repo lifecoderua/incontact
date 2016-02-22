@@ -15,6 +15,10 @@ function contactForm() {
   return directive;
 }
 
-function ContactFormController() {
+ContactFormController.$inject = ['$routeParams'];
+
+function ContactFormController($routeParams) {
   var vm = this;
+
+  vm.id = $routeParams.id;
 }

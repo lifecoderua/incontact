@@ -6,10 +6,19 @@
     <h3>Contacts</h3>
 
     <div class="row">
-        <div class="contact" ng-repeat="contact in contactList.contacts">
-            <p>{{ contact.id }}</p>
-            <p>{{ contact.first_name }}</p>
-            <p>{{ contact.last_name }}</p>
+        <div class="contact well" ng-repeat="contact in contactList.contacts">
+            <div class="primary">
+                <p>{{ contact.id }}</p>
+                <p>{{ contact.first_name }}</p>
+                <p>{{ contact.last_name }}</p>
+            </div>
+            <div class="secondary">
+
+            </div>
+            <div class="actions">
+                <p><a href="/edit/{{contact.id}}" class="btn btn-primary">Edit</a></p>
+                <p><a href="#" class="btn btn-danger">Delete</a></p>
+            </div>
         </div>
     </div>
 </div>
