@@ -1,6 +1,13 @@
 <div id="contacts">
+    <div class="view-mode">
+        <a href="#" ng-click="contactList.setViewMode('list')">List</a>
+        <a href="#" ng-click="contactList.setViewMode('grid')">Grid</a>
+    </div>
     <h3>Contacts</h3>
-    <div class="contact" ng-repeat="contact in contact_list.contacts">
+    
+    <div class="contact" 
+         ng-class="contactList.viewMode"
+         ng-repeat="contact in contactList.contacts">
         <p>{{ contact.id }}</p>
         <p>{{ contact.first_name }}</p>
         <p>{{ contact.last_name }}</p>
