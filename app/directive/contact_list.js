@@ -23,7 +23,9 @@ function ContactListController() {
   vm.contacts = [
     {id: 5, first_name: 'Test', last_name: 'Me'},
     {id: 2, first_name: 'Test2', last_name: 'Me'},
-    {id: 3, first_name: 'Test', last_name: 'Me3'}
+    {id: 3, first_name: 'Test', last_name: 'Me3'},
+    {id: 9, first_name: 'Another', last_name: 'Me3'},
+    {id: 4, first_name: 'Test', last_name: 'One'}
   ];
   vm.setViewMode = function(mode) { vm.viewMode = mode };
 

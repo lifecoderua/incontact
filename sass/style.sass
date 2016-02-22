@@ -1,4 +1,13 @@
+//noinspection CssUnknownTarget
 @import "bootstrap-sass/assets/stylesheets/_bootstrap.scss"
 
 h1
   color: #999999
+
+#contact-list
+  &.list
+    .contact
+      @include make-md-column(12)
+  &.grid
+    .contact
+      @include make-md-column(4)
