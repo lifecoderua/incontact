@@ -6,7 +6,7 @@ module.exports = contactList;
 
 function contactList() {
   var directive = {
-    templateUrl: '/templates/contact_list.html',
+    templateUrl: '/templates/directives/contact_list.html',
     controller: ContactListController,
     controllerAs: 'contactList',
     bindToController: true

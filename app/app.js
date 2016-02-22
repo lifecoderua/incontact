@@ -10,10 +10,14 @@ angular
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: '/templates/index.html'
+        templateUrl: '/templates/pages/index.html'
       })
       .when('/new', {
-        templateUrl: '/templates/new.html'
+        templateUrl: '/templates/pages/new.html'
+      })
+      .when('/edit/:id', {
+        templateUrl: '/templates/pages/new.html',
+
       });
 
     $locationProvider.html5Mode(true);
@@ -25,29 +29,6 @@ angular
     //});
   });
 
-
-
-
-    //appRouter($routeProvider, $locationProvider));
-
 //require('./service');
 //require('./controller');
 require('./directive');
-
-
-function appRouter($routeProvider, $locationProvider) {
-  $routeProvider
-    .when('/new', {
-      templateUrl: '/templates/index.html'
-    })
-    .when('/new', {
-      templateUrl: '/templates/new.html'
-    });
-
-  // with bound controller
-    //.when('/avengers', {
-    //  templateUrl: 'avengers.html',
-    //  controller: 'Avengers',
-    //  controllerAs: 'vm'
-    //});
-}

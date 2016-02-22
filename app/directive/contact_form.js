@@ -6,7 +6,7 @@ module.exports = contactForm;
 
 function contactForm() {
   var directive = {
-    templateUrl: '/templates/_form.html',
+    templateUrl: '/templates/directives/_form.html',
     controller: ContactFormController,
     controllerAs: 'contactForm',
     bindToController: true
