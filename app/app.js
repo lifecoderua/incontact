@@ -1,7 +1,14 @@
-require('angular')
+'use strict';
 
-var app = angular.module('app', [])
+require('angular');
 
-app.controller('MainController', function($scope) {
-    $scope.message = 'Angular 1 Works!'
-})
+angular.module('app', []);
+
+angular.module('app').controller('MainController', function($scope) {
+  $scope.message = 'Angular 1 Works!'
+});
+
+
+//require('./service');
+//require('./controller');
+require('./directive');

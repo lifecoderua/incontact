@@ -19,3 +19,7 @@
 ## Usage
 
 - `$ gulp` to run the server and watch assets
+
+## Notes
+
+- ToDo: inconsistent gulp setup, requires manual `browserify` when new files added
