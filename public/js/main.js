@@ -4,7 +4,7 @@ require('angular')
 var app = angular.module('app', [])
 
 app.controller('MainController', function($scope) {
-    $scope.message = 'Angular Works!'
+    $scope.message = 'Angular 1 Works!'
 })
 },{"angular":3}],2:[function(require,module,exports){
 /**
