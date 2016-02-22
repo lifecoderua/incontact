@@ -2,8 +2,6 @@ angular
   .module('app')
   .directive('contactForm', contactForm);
 
-module.exports = contactForm;
-
 function contactForm() {
   var directive = {
     templateUrl: '/templates/directives/_form.html',
@@ -15,10 +13,12 @@ function contactForm() {
   return directive;
 }
 
-ContactFormController.$inject = ['$routeParams'];
+ContactFormController.$inject = ['$routeParams', 'contactService'];
 
-function ContactFormController($routeParams) {
+function ContactFormController($routeParams, contactService) {
   var vm = this;
 
+  // ToDo: move init to the resolve map
   vm.id = $routeParams.id;
+  vm.contact = contactService.find(vm.id);
 }

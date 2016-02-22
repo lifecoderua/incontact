@@ -2,8 +2,6 @@ angular
   .module('app')
   .directive('contactList', contactList);
 
-module.exports = contactList;
-
 function contactList() {
   var directive = {
     templateUrl: '/templates/directives/contact_list.html',
@@ -15,7 +13,9 @@ function contactList() {
   return directive;
 }
 
-function ContactListController() {
+ContactListController.$inject = ['contactService'];
+
+function ContactListController(contactService) {
   var vm = this;
 
   // vm.view_modes = ['list', 'grid'];
@@ -25,7 +25,8 @@ function ContactListController() {
     {id: 2, first_name: 'Test2', last_name: 'Me'},
     {id: 3, first_name: 'Test', last_name: 'Me3'},
     {id: 9, first_name: 'Another', last_name: 'Me3'},
-    {id: 4, first_name: 'Test', last_name: 'One'}
+    {id: 4, first_name: 'Test', last_name: 'One'},
+    contactService.find()
   ];
   vm.setViewMode = function(mode) { vm.viewMode = mode };
 

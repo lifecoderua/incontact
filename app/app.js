@@ -2,8 +2,9 @@
 
 require('angular');
 require('angular-route');
+require('angular-local-storage');
 
-angular.module('app', ['ngRoute']);
+angular.module('app', ['ngRoute', 'LocalStorageModule']);
 
 angular
   .module('app')
@@ -29,6 +30,6 @@ angular
     //});
   });
 
-//require('./service');
+require('./service');
 //require('./controller');
 require('./directive');
