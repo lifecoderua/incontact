@@ -1,5 +1,7 @@
-Application “Contact manager”:
-Requirements:
+# Application “Contact manager”:
+
+## Requirements:
+
 - Contact model should contains: id, first name, last name, e-mail address, phone, favorite books, major skill-set (as JS, Java, c# etc.), birthday date in UTC format and the description
 - The app should present two kind of views: as list and as grid
 - Use the local storage for keeping the contacts
@@ -12,3 +14,8 @@ Requirements:
 - Add and Edit views should contains all form fields as required but description filed should be an optional
 - The app should validate required fields and provide a message when some required field is empty
 - An item on grid or list view should change background color on hover state
+
+
+## Usage
+
+- `$ gulp connect` to run the server
