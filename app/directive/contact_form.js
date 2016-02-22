@@ -21,4 +21,12 @@ function ContactFormController($routeParams, contactService) {
   // ToDo: move init to the resolve map
   vm.id = $routeParams.id;
   vm.contact = contactService.find(vm.id);
+
+  vm.save = save;
+
+
+  function save() {
+    contactService.save(vm.contact);
+    console.log(vm.contact);
+  }
 }

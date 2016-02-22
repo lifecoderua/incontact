@@ -3,7 +3,9 @@ angular
   .factory('contactService', contactService);
 
 
-function contactService() {
+contactService.$inject = ['localStorageService'];
+
+function contactService(localStorageService) {
   var service = {
     find: find,
     save: save
@@ -13,14 +15,16 @@ function contactService() {
 
 
   function find(id) {
-    return {
-      id: id,
-      first_name: 'Another',
-      last_name: 'Contact'
-    }
+    return localStorageService.get(id);
+    //{
+    //  id: id,
+    //  first_name: 'Another',
+    //  last_name: 'Contact'
+    //}
   }
 
   function save(contact) {
+    localStorageService.set(contact.id, contact);
     console.log('saved')
   }
 }

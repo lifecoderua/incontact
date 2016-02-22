@@ -1,7 +1,9 @@
-<form action="">
+<form>
     <label for="">ID:</label>
     <input type="text" ng-model="contactForm.contact.id">
 
     <label for="">First Name:</label>
     <input type="text" ng-model="contactForm.contact.first_name">
+
+    <input type="submit" ng-click="contactForm.save()" value="Save" class="btn btn-primary" />
 </form>
