@@ -18,4 +18,4 @@
 
 ## Usage
 
-- `$ gulp connect` to run the server
+- `$ gulp` to run the server and watch assets
