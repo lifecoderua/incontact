@@ -1,5 +1,7 @@
 var gulp = require('gulp')
-var sass = require('gulp-ruby-sass')
+//var sass = require('gulp-ruby-sass')
+var sass = require('gulp-sass')
+var moduleImporter = require('sass-module-importer');
 var connect = require('gulp-connect')
 // requires browserify and vinyl-source-stream
 var browserify = require('browserify')
@@ -24,7 +26,9 @@ gulp.task('browserify', function() {
 })
 
 gulp.task('sass', function() {
-    return sass('sass/style.sass')
+    //return sass('sass/style.sass')
+    return gulp.src('./sass/style.sass')
+        .pipe(sass({ importer: moduleImporter() }))
         .pipe(gulp.dest('public/css'))
 })
 
