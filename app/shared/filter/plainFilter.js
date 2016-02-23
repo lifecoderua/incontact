@@ -9,11 +9,8 @@ function plain() {
     for (var id in input) {
       plain.push(input[id]);
     }
-console.log(plain);
     return plain;
   }
-
-  to_array.$stateful = true;
 
   return to_array;
 }
