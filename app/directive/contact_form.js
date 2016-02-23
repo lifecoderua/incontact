@@ -13,9 +13,9 @@ function contactForm() {
   return directive;
 }
 
-ContactFormController.$inject = ['$routeParams', 'contactService'];
+ContactFormController.$inject = ['$location', '$routeParams', 'contactService'];
 
-function ContactFormController($routeParams, contactService) {
+function ContactFormController($location, $routeParams, contactService) {
   var vm = this;
 
   // ToDo: move init to the resolve map
@@ -28,5 +28,6 @@ function ContactFormController($routeParams, contactService) {
   function save() {
     contactService.save(vm.contact);
     console.log(vm.contact);
+    $location.path('/');
   }
 }

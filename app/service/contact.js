@@ -6,21 +6,25 @@ angular
 contactService.$inject = ['localStorageService'];
 
 function contactService(localStorageService) {
+  var contacts = all();
+  // cleanup
+   localStorageService.set('contacts', {});
+
   var service = {
     find: find,
     save: save,
     destroy: destroy,
-    all: all
+    all: contacts
   };
 
   return service;
 
   function find(id) {
-    return all()[id];
+    return contacts[id];
   }
 
   function save(contact) {
-    var contacts = all();
+    //var contacts = all();
     contacts[contact.id] = contact;
     localStorageService.set('contacts', contacts);
   }
@@ -30,7 +34,7 @@ function contactService(localStorageService) {
   }
 
   function destroy(id) {
-    var contacts = all();
+    //var contacts = all();
     delete contacts[id];
     localStorageService.set('contacts', contacts);
   }

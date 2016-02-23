@@ -27,7 +27,7 @@ function ContactListController(contactService) {
   activate();
 
   function activate() {
-    vm.contacts = contactService.all();
+    vm.contacts = contactService.all;
   }
 
 }
