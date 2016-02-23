@@ -31,7 +31,7 @@ function contactService(localStorageService) {
 
   function destroy(id) {
     var contacts = all();
-    contacts[contact.id] = null;
+    delete contacts[id];
     localStorageService.set('contacts', contacts);
   }
 }

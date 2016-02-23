@@ -21,6 +21,7 @@ function ContactListController(contactService) {
   // vm.view_modes = ['list', 'grid'];
   vm.viewMode = 'list';
   vm.setViewMode = function(mode) { vm.viewMode = mode };
+  vm.destroy = function(id) { contactService.destroy(id) };
   vm.contacts = [];
 
   activate();
@@ -28,4 +29,5 @@ function ContactListController(contactService) {
   function activate() {
     vm.contacts = contactService.all();
   }
+
 }
