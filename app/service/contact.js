@@ -8,7 +8,7 @@ contactService.$inject = ['localStorageService'];
 function contactService(localStorageService) {
   var contacts = all();
   // cleanup
-   localStorageService.set('contacts', {});
+  // localStorageService.set('contacts', {});
 
   var service = {
     find: find,
@@ -25,6 +25,8 @@ function contactService(localStorageService) {
 
   function save(contact) {
     //var contacts = all();
+    // ToDo: better way to filter "full_name"? Model method? Filter?
+    contact.full_name = contact.first_name + ' ' + contact.last_name;
     contacts[contact.id] = contact;
     localStorageService.set('contacts', contacts);
   }

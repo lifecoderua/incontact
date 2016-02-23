@@ -13,21 +13,30 @@ function contactList() {
   return directive;
 }
 
-ContactListController.$inject = ['contactService'];
+ContactListController.$inject = ['contactService', 'plainFilter', 'filterFilter'];
 
-function ContactListController(contactService) {
+function ContactListController(contactService, plainFilter, filterFilter) {
   var vm = this;
 
   // vm.view_modes = ['list', 'grid'];
   vm.viewMode = 'list';
   vm.setViewMode = function(mode) { vm.viewMode = mode };
   vm.destroy = function(id) { contactService.destroy(id) };
+  vm.filters = {
+    full_name: '',
+    email: ''
+    //skill: ''
+  };
   vm.contacts = [];
+
 
   activate();
 
   function activate() {
     vm.contacts = contactService.all;
+
+    // does not observe initial object. Should it be done by $watch?
+    //vm.filteredContacts = filterFilter(plainFilter(contacts), vm.filters);
   }
 
 }

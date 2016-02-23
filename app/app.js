@@ -4,7 +4,9 @@ require('angular');
 require('angular-route');
 require('angular-local-storage');
 
-angular.module('app', ['ngRoute', 'LocalStorageModule']);
+require('./shared/filter/plainFilter');
+
+angular.module('app', ['ngRoute', 'LocalStorageModule', 'sharedFilters']);
 
 angular
   .module('app')
@@ -29,6 +31,9 @@ angular
     //  controllerAs: 'vm'
     //});
   });
+
+
+
 
 require('./service');
 //require('./controller');
