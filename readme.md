@@ -22,4 +22,15 @@
 
 ## Notes
 
-- ToDo: inconsistent gulp setup, requires manual `browserify` when new files added
+- ToDo: inconsistent gulp setup, requires manual `browserify` when new files added 
+(Seems it isn't a general case, more about files added when watch is down. Should be fixed by adding `browserify` on startup)
+  
+## To do
+
+- [ ] Style views, add single item view
+- [ ] Normalize file structure
+- [ ] Move `SimpleInput` to shared || try a vendor form helper
+- [ ] Represent Contact as a $resource
+- [ ] Add resource timeout and test `resolve`, add loader animation
+- [ ] ? Store skills in LocalStorage? Not a lot of sense as this way they are not tied with the real data.
+- [ ] Configure http-server to redirect to `/` 
