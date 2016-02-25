@@ -1,0 +1,37 @@
+<h2>{{ vm.contact.first_name }} {{ vm.contact.last_name }}</h2>
+<div class="row">
+    <div class="col-md-2"><span class="view-label">id</span></div>
+    <div class="col-md-10">{{ vm.contact.id }}</div>
+</div>
+<div class="row">
+    <div class="col-md-2"><span class="view-label">email</span></div>
+    <div class="col-md-10">{{ vm.contact.email }}</div>
+</div>
+<div class="row">
+    <div class="col-md-2"><span class="view-label">address</span></div>
+    <div class="col-md-10">{{ vm.contact.address }}</div>
+</div>
+<div class="row">
+    <div class="col-md-2"><span class="view-label">phone</span></div>
+    <div class="col-md-10">{{ vm.contact.phone }}</div>
+</div>
+<div class="row">
+    <div class="col-md-2"><span class="view-label">books</span></div>
+    <div class="col-md-10">{{ vm.contact.books }}</div>
+</div>
+<div class="row">
+    <div class="col-md-2"><span class="view-label">skills</span></div>
+    <div class="col-md-10">{{ vm.contact.skills }}</div>
+</div>
+<div class="row">
+    <div class="col-md-2"><span class="view-label">birthday</span></div>
+    <div class="col-md-10">{{ vm.contact.birthday | date:'mediumDate' }}</div>
+</div>
+<div class="row">
+    <div class="col-md-2"><span class="view-label">description</span></div>
+    <div class="col-md-10">{{ vm.contact.description }}</div>
+</div>
+
+
+
+<p><a href="/{{vm.contact.id}}/edit" class="btn btn-primary">Edit</a></p>

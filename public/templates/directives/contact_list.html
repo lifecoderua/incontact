@@ -5,8 +5,6 @@
     </div>
 
     <div class="row">
-        {{ vm.availableSkills }}
-
         <h4>Filters</h4>
         <div class="col-md-4">
             <b>Name: </b>
@@ -31,14 +29,13 @@
         <div class="contact well" ng-repeat="contact in contactList.contacts | plain | filter: contactList.filters">
             <div class="primary">
                 <p>{{ contact.id }}</p>
-                <p>{{ contact.first_name }}</p>
-                <p>{{ contact.last_name }}</p>
+                <p><a href="/{{contact.id}}">{{ contact.first_name }} {{ contact.last_name }}</a></p>
             </div>
             <div class="secondary">
 
             </div>
             <div class="actions">
-                <p><a href="/edit/{{contact.id}}" class="btn btn-primary">Edit</a></p>
+                <p><a href="/{{contact.id}}/edit" class="btn btn-primary">Edit</a></p>
                 <p><a ng-click="contactList.destroy(contact.id)" class="btn btn-danger">Delete</a></p>
             </div>
         </div>

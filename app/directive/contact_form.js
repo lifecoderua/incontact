@@ -34,6 +34,6 @@ function ContactFormController($location, $routeParams, contactService) {
 
   function save() {
     contactService.save(vm.contact);
-    $location.path('/');
+    $location.path('/' + vm.contact.id);
   }
 }

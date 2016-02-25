@@ -18,9 +18,11 @@ angular
       .when('/new', {
         templateUrl: '/templates/pages/new.html'
       })
-      .when('/edit/:id', {
-        templateUrl: '/templates/pages/new.html',
-
+      .when('/:id', {
+        templateUrl: '/templates/pages/show.html'
+      })
+      .when('/:id/edit', {
+        templateUrl: '/templates/pages/new.html'
       });
 
     $locationProvider.html5Mode(true);
