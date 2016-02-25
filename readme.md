@@ -31,6 +31,7 @@
 - [ ] Normalize file structure
 - [ ] Move `SimpleInput` to shared || try a vendor form helper
 - [ ] Represent Contact as a $resource
+- [ ] Add date validation message. Add email validation message.
 - [ ] Add resource timeout and test `resolve`, add loader animation
 - [ ] ? Store skills in LocalStorage? Not a lot of sense as this way they are not tied with the real data.
-- [ ] Configure http-server to redirect to `/` 
+- [ ] Configure http-server to redirect to `/`
