@@ -21,19 +21,17 @@ function ContactFormController($location, $routeParams, contactService) {
   // ToDo: move init to the resolve map
   vm.id = $routeParams.id;
   vm.contact = contactService.find(vm.id);
-
   vm.save = save;
-  vm.validationStatus = validationStatus;
+
+  activate();
+
+
+  function activate() {
+    vm.contact.birthday = new Date(vm.contact.birthday);
+  }
 
   function save() {
     contactService.save(vm.contact);
-    console.log(vm.contact);
     $location.path('/');
-  }
-
-  function validationStatus(field) {
-    var status = vm.contact[field].$invalid ? 'has-invalid' : '';
-    return status;
-
   }
 }
