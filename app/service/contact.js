@@ -14,7 +14,8 @@ function contactService(localStorageService) {
     find: find,
     save: save,
     destroy: destroy,
-    all: contacts
+    all: contacts,
+    getSkills: getSkills
   };
 
   return service;
@@ -24,7 +25,6 @@ function contactService(localStorageService) {
   }
 
   function save(contact) {
-    //var contacts = all();
     // ToDo: better way to filter "full_name"? Model method? Filter?
     contact.full_name = contact.first_name + ' ' + contact.last_name;
     contacts[contact.id] = contact;
@@ -36,8 +36,25 @@ function contactService(localStorageService) {
   }
 
   function destroy(id) {
-    //var contacts = all();
     delete contacts[id];
     localStorageService.set('contacts', contacts);
+  }
+
+  function getSkills() {
+    var skills = [];
+    for (var id in contacts) {
+      console.log(id, contacts[id]);
+      skills = skills.concat(
+        contacts[id].skills
+                    .split(',')
+                    .map(function(item){ return item.trim(); })
+      );
+    }
+
+    skills = skills.filter(function (e, i, arr) {
+      return arr.lastIndexOf(e) === i;
+    });
+
+    return skills;
   }
 }

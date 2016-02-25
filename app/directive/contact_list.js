@@ -24,16 +24,18 @@ function ContactListController(contactService, plainFilter, filterFilter) {
   vm.destroy = function(id) { contactService.destroy(id) };
   vm.filters = {
     full_name: '',
-    email: ''
-    //skill: ''
+    email: '',
+    skills: ''
   };
   vm.contacts = [];
+  vm.availableSkills = [];
 
 
   activate();
 
   function activate() {
     vm.contacts = contactService.all;
+    vm.availableSkills = contactService.getSkills();
 
     // does not observe initial object. Should it be done by $watch?
     //vm.filteredContacts = filterFilter(plainFilter(contacts), vm.filters);

@@ -5,6 +5,8 @@
     </div>
 
     <div class="row">
+        {{ vm.availableSkills }}
+
         <h4>Filters</h4>
         <div class="col-md-4">
             <b>Name: </b>
@@ -16,7 +18,10 @@
         </div>
         <div class="col-md-4">
             <b>Skill: </b>
-            <input type="text" ng-model="contactList.filters.skills">
+            <select ng-model="contactList.filters.skills">
+                <option value="">-- Any --</option>
+                <option value="{{ skill }}" ng-repeat="skill in contactList.availableSkills">{{ skill }}</option>
+            </select>
         </div>
     </div>
 
