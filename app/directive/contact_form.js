@@ -27,7 +27,9 @@ function ContactFormController($location, $routeParams, contactService) {
 
 
   function activate() {
-    vm.contact.birthday = new Date(vm.contact.birthday);
+    if (vm.contact) {
+      vm.contact.birthday = new Date(vm.contact.birthday);
+    }
   }
 
   function save() {
