@@ -1,0 +1,7 @@
+<div class="form-group" ng-class="vm.invalid">
+    <label class="col-sm-2 control-label" for="{{ vm.name }}">{{ vm.name }}*</label>
+    <div class="col-sm-10">
+        <input required  class="form-control" name="{{ vm.name }}" id="{{ vm.name }}" type="{{ vm.as }}" ng-model="vm.model">
+        <span ng-show="vm.form[vm.name].$dirty && vm.form[vm.name].$error.required">This field is required!</span>
+    </div>
+</div>

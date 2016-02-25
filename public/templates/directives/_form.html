@@ -1,66 +1,13 @@
-<form class="form-horizontal">
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="id">ID:</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="id" type="text" ng-model="contactForm.contact.id">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="first-name">First Name:</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="first-name" type="text" ng-model="contactForm.contact.first_name">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="last-name">Last Name:</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="last-name" type="text" ng-model="contactForm.contact.last_name">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="email">Email:</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="email" type="text" ng-model="contactForm.contact.email">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="address">address:</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="address" type="text" ng-model="contactForm.contact.address">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="phone">phone:</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="phone" type="text" ng-model="contactForm.contact.phone">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="books">books:</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="books" type="text" ng-model="contactForm.contact.books">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="skills">skills:</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="skills" type="text" ng-model="contactForm.contact.skills">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label" for="birthday">birthday:</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="birthday" type="text" ng-model="contactForm.contact.birthday">
-        </div>
-    </div>
+<form class="form-horizontal" name="cf" class="form-horizontal">
+    <simple-input form="cf"  model="contactForm.contact.id" name="id"></simple-input>
+    <simple-input form="cf"  model="contactForm.contact.first_name" name="first_name"></simple-input>
+    <simple-input form="cf"  model="contactForm.contact.last_name" name="last_name"></simple-input>
+    <simple-input form="cf"  model="contactForm.contact.email" name="email"></simple-input>
+    <simple-input form="cf"  model="contactForm.contact.address" name="address"></simple-input>
+    <simple-input form="cf"  model="contactForm.contact.phone" name="phone"></simple-input>
+    <simple-input form="cf"  model="contactForm.contact.books" name="books"></simple-input>
+    <simple-input form="cf"  model="contactForm.contact.skills" name="skills"></simple-input>
+    <simple-input form="cf"  model="contactForm.contact.birthday" name="birthday" as="date"></simple-input>
 
     <div class="form-group">
         <label class="col-sm-2 control-label" for="description">description:</label>
@@ -70,5 +17,6 @@
         </div>
     </div>
 
-    <input type="submit" ng-click="contactForm.save()" value="Save" class="btn btn-primary"/>
+    <input type="submit" value="Save" class="btn btn-primary"
+           ng-click="contactForm.save()" ng-disabled="cf.$invalid" />
 </form>

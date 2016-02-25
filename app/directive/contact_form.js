@@ -23,11 +23,17 @@ function ContactFormController($location, $routeParams, contactService) {
   vm.contact = contactService.find(vm.id);
 
   vm.save = save;
-
+  vm.validationStatus = validationStatus;
 
   function save() {
     contactService.save(vm.contact);
     console.log(vm.contact);
     $location.path('/');
+  }
+
+  function validationStatus(field) {
+    var status = vm.contact[field].$invalid ? 'has-invalid' : '';
+    return status;
+
   }
 }
