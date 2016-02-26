@@ -26,17 +26,15 @@
     <div class="row">
         <h3>Contacts</h3>
 
-        <div class="contact well" ng-repeat="contact in contactList.contacts | plain | filter: contactList.filters">
+        <div class="contact panel" ng-repeat="contact in contactList.contacts | plain | filter: contactList.filters">
             <div class="primary">
-                <p>{{ contact.id }}</p>
                 <p><a href="/{{contact.id}}">{{ contact.first_name }} {{ contact.last_name }}</a></p>
             </div>
             <div class="secondary">
-
+                <p><a href="mailto: {{ contact.email }}">{{ contact.email }}</a></p>
             </div>
             <div class="actions">
-                <p><a href="/{{contact.id}}/edit" class="btn btn-primary">Edit</a></p>
-                <p><a ng-click="contactList.destroy(contact.id)" class="btn btn-danger">Delete</a></p>
+                <p><a href="/{{contact.id}}/edit" class="btn btn-primary">Edit</a> <a ng-click="contactList.destroy(contact.id)" class="btn btn-danger">Delete</a></p>
             </div>
         </div>
     </div>

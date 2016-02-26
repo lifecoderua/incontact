@@ -8,9 +8,19 @@ h1
   &.list
     .contact
       @include make-md-column(12)
+      .primary
+        float: left
+      .secondary
+        display: none
+      .actions
+        float: right
   &.grid
     .contact
       @include make-md-column(4)
+
+  .contact
+    &:hover
+      background-color: $gray-lighter
 
 .form-group
   label
